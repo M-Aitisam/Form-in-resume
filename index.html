@@ -28,11 +28,14 @@
             grid-template-columns: 1fr 1fr;
             gap: 20px;
         }
+        .input-group {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 10px;
+        }
         label {
             font-weight: bold;
             color: #3f51b5;
-            margin-top: 10px;
-            grid-column: span 2;
         }
         input, textarea {
             width: 100%;
@@ -93,49 +96,72 @@
 <body>
     <h2>Resume Generator</h2>
     <form id="resumeForm">
-        <div style="display: flex; justify-content: space-between; width: 100%; ">
+        <div class="input-group">
             <label for="name">Full Name:</label>
-            <input type="text" id="name" name="name" value="Muhammad Aitisam Ahmed" required class="full-width">
+            <input type="text" id="name" name="name" value="Muhammad Aitisam Ahmed" required>
+        </div>
 
+        <div class="input-group">
             <label for="email">Email:</label>
             <input type="email" id="email" name="email" value="aitisamahmed24@gmail.com" required>
         </div>
 
+        <div class="input-group">
+            <label for="phone">Phone:</label>
+            <input type="tel" id="phone" name="phone" value="03471536817" required>
+        </div>
 
-        <label for="phone">Phone:</label>
-        <input type="tel" id="phone" name="phone" value="03471536817" required>
+        <div class="input-group">
+            <label for="address">Address:</label>
+            <input type="text" id="address" name="address" value="6th Road Dhoke Kashmirian, Rawalpindi, Pakistan" required>
+        </div>
 
-        <label for="address" class="full-width">Address:</label>
-        <input type="text" id="address" name="address" value="6th Road Dhoke Kashmirian, Rawalpindi, Pakistan" required class="full-width">
+        <div class="input-group">
+            <label for="linkedin">LinkedIn:</label>
+            <input type="text" id="linkedin" name="linkedin" value="https://www.linkedin.com/in/aitisam-ahmed-9395b62a0" required>
+        </div>
 
-        <label for="linkedin">LinkedIn:</label>
-        <input type="text" id="linkedin" name="linkedin" value="https://www.linkedin.com/in/aitisam-ahmed-9395b62a0" required>
+        <div class="input-group">
+            <label for="github">GitHub:</label>
+            <input type="text" id="github" name="github" value="https://github.com/M-Aitisam" required>
+        </div>
 
-        <label for="github">GitHub:</label>
-        <input type="text" id="github" name="github" value="https://github.com/M-Aitisam" required>
+        <div class="input-group full-width">
+            <label for="summary">Professional Summary:</label>
+            <textarea id="summary" name="summary" rows="4" required>I am passionate about creating innovative solutions. My expertise extends to both front-end and back-end technologies, currently immersing myself in AWS. I thrive in a collaborative team environment, aiming to work closely with a like-minded team for the development of high-impact products and services.</textarea>
+        </div>
 
-        <label for="summary" class="full-width">Professional Summary:</label>
-        <textarea id="summary" name="summary" rows="4" required class="full-width">I am passionate about creating innovative solutions. My expertise extends to both front-end and back-end technologies, currently immersing myself in AWS. I thrive in a collaborative team environment, aiming to work closely with a like-minded team for the development of high-impact products and services.</textarea>
+        <div class="input-group full-width">
+            <label for="education">Education:</label>
+            <textarea id="education" name="education" rows="4" required>Bachelor of Computer Science (BSCS), Air University, 01/2024 - Present, Islamabad.</textarea>
+        </div>
 
-        <label for="education" class="full-width">Education:</label>
-        <textarea id="education" name="education" rows="4" required class="full-width">Bachelor of Computer Science (BSCS), Air University, 01/2024 - Present, Islamabad.</textarea>
+        <div class="input-group full-width">
+            <label for="experience">Work Experience:</label>
+            <textarea id="experience" name="experience" rows="6" required>Junior DevOps Engineer at Cyberoide Tech: Worked with AWS services, extensive CI/CD pipeline designing, and technical documentation. Full Stack Web Developer Trainee at Air University: Working on Blazor application development using .NET and C#.</textarea>
+        </div>
 
-        <label for="experience" class="full-width">Work Experience:</label>
-        <textarea id="experience" name="experience" rows="6" required class="full-width">Junior DevOps Engineer at Cyberoide Tech: Worked with AWS services, extensive CI/CD pipeline designing, and technical documentation. Full Stack Web Developer Trainee at Air University: Working on Blazor application development using .NET and C#.</textarea>
+        <div class="input-group full-width">
+            <label for="skills">Skills:</label>
+            <textarea id="skills" name="skills" rows="4" required>HTML, CSS, JavaScript, React, Node.js, Docker, Jenkins, C#, Blazor, AWS, CI/CD, Git, Networking.</textarea>
+        </div>
 
-        <label for="skills" class="full-width">Skills:</label>
-        <textarea id="skills" name="skills" rows="4" required class="full-width">HTML, CSS, JavaScript, React, Node.js, Docker, Jenkins, C#, Blazor, AWS, CI/CD, Git, Networking.</textarea>
+        <div class="input-group full-width">
+            <label for="projects">Personal Projects:</label>
+            <textarea id="projects" name="projects" rows="4" required>Blazor Web Application: Developed a Shop management app using Blazor Server App and ASP.NET Core. Implemented CRUD operations and deployed using EC2 with auto-scaling groups.</textarea>
+        </div>
 
-        <label for="projects" class="full-width">Personal Projects:</label>
-        <textarea id="projects" name="projects" rows="4" required class="full-width">Blazor Web Application: Developed a Shop management app using Blazor Server App and ASP.NET Core. Implemented CRUD operations and deployed using EC2 with auto-scaling groups.</textarea>
+        <div class="input-group full-width">
+            <label for="certificates">Certificates:</label>
+            <textarea id="certificates" name="certificates" rows="4" required>C# (.NET), Cyberoide Tech: Learning C# concepts and creating a final year project using Blazor.</textarea>
+        </div>
 
-        <label for="certificates" class="full-width">Certificates:</label>
-        <textarea id="certificates" name="certificates" rows="4" required class="full-width">C# (.NET), Cyberoide Tech: Learning C# concepts and creating a final year project using Blazor.</textarea>
+        <div class="input-group full-width">
+            <label for="interests">Interests:</label>
+            <textarea id="interests" name="interests" rows="4" required>DevOps, Full Stack Web Development, Backend Development.</textarea>
+        </div>
 
-        <label for="interests" class="full-width">Interests:</label>
-        <textarea id="interests" name="interests" rows="4" required class="full-width">DevOps, Full Stack Web Development, Backend Development.</textarea>
-
-        <button type="button" onclick="generateResume()">Generate Resume</button>
+         <a href="./resume/MyResume/index.html"><button type="button" onclick="generateResume()">Generate Resume</button> </a>
     </form>
 
     <div id="resumeOutput"></div>
