@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f4f8;
+            margin: 0;
+            padding: 20px;
+            color: #333;
+        }
+        h2, h3 {
+            text-align: center;
+            color: #3f51b5;
+        }
+        form {
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 30px;
+            border-top: 5px solid #3f51b5;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        label {
+            font-weight: bold;
+            color: #3f51b5;
+            margin-top: 10px;
+            grid-column: span 2;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #c5cae9;
+            border-radius: 6px;
+            box-sizing: border-box;
+            background-color: #e8eaf6;
+            font-size: 14px;
+        }
+        textarea {
+            resize: vertical;
+        }
+        input:focus, textarea:focus {
+            border-color: #303f9f;
+            outline: none;
+            box-shadow: 0 0 8px rgba(63, 81, 181, 0.2);
+        }
+        button {
+            background-color: #303f9f;
+            color: white;
+            padding: 14px 20px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 18px;
+            grid-column: span 2;
+            margin-top: 20px;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #1a237e;
+        }
+        #resumeOutput {
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 30px;
+            display: none;
+            border-top: 5px solid #3f51b5;
+        }
+        #resumeOutput h2 {
+            border-bottom: 2px solid #3f51b5;
+            padding-bottom: 8px;
+            margin-bottom: 20px;
+            color: #303f9f;
+        }
+        #resumeOutput p, #resumeOutput ul {
+            margin: 10px 0;
+        }
+        .full-width {
+            grid-column: span 2;
+        }
+    </style>
+</head>
+<body>
+    <h2>Resume Generator</h2>
+    <form id="resumeForm">
+        <div style="display: flex; justify-content: space-between; width: 100%; ">
+            <label for="name">Full Name:</label>
+            <input type="text" id="name" name="name" value="Muhammad Aitisam Ahmed" required class="full-width">
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" value="aitisamahmed24@gmail.com" required>
+        </div>
+
+
+        <label for="phone">Phone:</label>
+        <input type="tel" id="phone" name="phone" value="03471536817" required>
+
+        <label for="address" class="full-width">Address:</label>
+        <input type="text" id="address" name="address" value="6th Road Dhoke Kashmirian, Rawalpindi, Pakistan" required class="full-width">
+
+        <label for="linkedin">LinkedIn:</label>
+        <input type="text" id="linkedin" name="linkedin" value="https://www.linkedin.com/in/aitisam-ahmed-9395b62a0" required>
+
+        <label for="github">GitHub:</label>
+        <input type="text" id="github" name="github" value="https://github.com/M-Aitisam" required>
+
+        <label for="summary" class="full-width">Professional Summary:</label>
+        <textarea id="summary" name="summary" rows="4" required class="full-width">I am passionate about creating innovative solutions. My expertise extends to both front-end and back-end technologies, currently immersing myself in AWS. I thrive in a collaborative team environment, aiming to work closely with a like-minded team for the development of high-impact products and services.</textarea>
+
+        <label for="education" class="full-width">Education:</label>
+        <textarea id="education" name="education" rows="4" required class="full-width">Bachelor of Computer Science (BSCS), Air University, 01/2024 - Present, Islamabad.</textarea>
+
+        <label for="experience" class="full-width">Work Experience:</label>
+        <textarea id="experience" name="experience" rows="6" required class="full-width">Junior DevOps Engineer at Cyberoide Tech: Worked with AWS services, extensive CI/CD pipeline designing, and technical documentation. Full Stack Web Developer Trainee at Air University: Working on Blazor application development using .NET and C#.</textarea>
+
+        <label for="skills" class="full-width">Skills:</label>
+        <textarea id="skills" name="skills" rows="4" required class="full-width">HTML, CSS, JavaScript, React, Node.js, Docker, Jenkins, C#, Blazor, AWS, CI/CD, Git, Networking.</textarea>
+
+        <label for="projects" class="full-width">Personal Projects:</label>
+        <textarea id="projects" name="projects" rows="4" required class="full-width">Blazor Web Application: Developed a Shop management app using Blazor Server App and ASP.NET Core. Implemented CRUD operations and deployed using EC2 with auto-scaling groups.</textarea>
+
+        <label for="certificates" class="full-width">Certificates:</label>
+        <textarea id="certificates" name="certificates" rows="4" required class="full-width">C# (.NET), Cyberoide Tech: Learning C# concepts and creating a final year project using Blazor.</textarea>
+
+        <label for="interests" class="full-width">Interests:</label>
+        <textarea id="interests" name="interests" rows="4" required class="full-width">DevOps, Full Stack Web Development, Backend Development.</textarea>
+
+        <button type="button" onclick="generateResume()">Generate Resume</button>
+    </form>
+
+    <div id="resumeOutput"></div>
+
+    <script src="resume.js"></script>
+</body>
+</html>
